@@ -216,3 +216,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Ignore all CSV files
+*.csv
+
+# Ignore script backups and temp files
+*.csv.bak
+*.csv.tmp
+
+# Ignore Playwright debug HTML snapshots
+debug_*.html
+
+# Python cache (recommended)
+__pycache__/
+*.py[cod]
