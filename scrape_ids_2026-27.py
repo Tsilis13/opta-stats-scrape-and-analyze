@@ -1,4 +1,5 @@
 import argparse
+import os
 from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup
 
@@ -44,6 +45,10 @@ def main():
 
     ids = get_all_match_ids(args.url)
     print(f"\nExtracted {len(ids)} Match IDs.")
+
+    out_dir = os.path.dirname(args.output)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
 
     with open(args.output, "w", encoding="utf-8") as f:
         for match_id in ids:

@@ -742,6 +742,10 @@ def main():
         print(f"All {len(all_ids)} match IDs are already cached in {RAW_CSV}.")
         return
 
+    out_dir = os.path.dirname(RAW_CSV)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
+
     file_exists = os.path.exists(RAW_CSV)
     with open(RAW_CSV, "a", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)

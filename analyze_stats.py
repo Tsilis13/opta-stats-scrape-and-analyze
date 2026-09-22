@@ -171,6 +171,10 @@ def main():
 
     header_row = ["Player", "Team", "Games"] + [column_header(k) for k in stat_columns]
 
+    out_dir = os.path.dirname(LEADERBOARD_CSV)
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
+
     with open(LEADERBOARD_CSV, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(header_row)
