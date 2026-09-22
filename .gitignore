@@ -219,6 +219,7 @@ __marimo__/
 
 # Ignore all CSV files
 *.csv
+*.txt
 
 # Ignore script backups and temp files
 *.csv.bak
